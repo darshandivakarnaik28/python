@@ -36,8 +36,9 @@ while True:
     elif c==3:#forget password take user email,enter new password and show your password is updated to
         
     else:
-        print("Invalid choice exiting the program")
+        print("--Invalid choice exiting the program--")
         break
+
             
         
         
