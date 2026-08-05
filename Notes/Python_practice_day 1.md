@@ -1,4 +1,4 @@
-Great! Your learning goal is **Python Basics & Syntax** for interview preparation.
+learning goal is **Python Basics & Syntax** for interview preparation.
 
 We'll follow an interview format: **one question at a time**. I'll wait for your answer before giving feedback and moving to the next question.
 
