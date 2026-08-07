@@ -6,3 +6,4 @@ connection=mysql.connector.connect(
     database="studentdb"
 )
 cursor=connection.cursor()
+print("Database connected successfully")
