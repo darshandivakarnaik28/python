@@ -1,3 +1,4 @@
+#hospital management system using OOP concepts
 from abc import ABC, abstractmethod
 class Person(ABC):
     def __init__(self, name: str, age: int, gender: str, mobno: str):

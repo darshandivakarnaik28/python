@@ -1,5 +1,5 @@
+# Parking Management System using OOP concepts in Python
 from abc import ABC, abstractmethod
-
 class Vehicle(ABC):
     def __init__(self, license_plate, vehicle_type):
         self.license_plate = license_plate
