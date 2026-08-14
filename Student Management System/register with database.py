@@ -264,8 +264,8 @@ def main():
     connection=mysql.connector.connect(
     host="localhost",
     user="root",
-    password="252800",
-    database="studentdb"
+    password="your_password",
+    database="your_databse_name"
     )
     cursor=connection.cursor()
     while True:
