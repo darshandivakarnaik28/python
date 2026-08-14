@@ -1,11 +1,10 @@
 use studentdb;
 create table students(
-roll_number varchar(10) primary key,
-name varchar(10) not NULL,
+roll_number varchar(20) primary key,
+name varchar(25) not NULL,
 age int not null,
-email varchar(10) not null,
+email varchar(15) not null,
 course varchar(10) ,
 marks int ,
-grade varchar(2));
+grade varchar(3));
 
-desc students;
