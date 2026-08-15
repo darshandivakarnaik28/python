@@ -221,28 +221,28 @@ def student_statistics(cursor):
     try:
         cursor.execute(sql)
         total=cursor.fetchone()
-        print (f"Total students ={total}")
+        print (f"Total students ={total[0]}")
     except mysql.connector.Error as err:
         print(f"Error :{err}")
     sql="""SELECT AVG(marks) FROM students"""
     try:
         cursor.execute(sql)
         avg=cursor.fetchone()
-        print(f"Average mark={avg}")   
+        print(f"Average mark={avg[0]}")   
     except mysql.connector.Error as err:
             print(f"Error :{err}")       
     sql="""SELECT COUNT(roll_number) FROM students WHERE marks >= 50"""    
     try:
         cursor.execute(sql)
         studentss=cursor.fetchone()
-        print(f"Passed students are:{studentss}")
+        print(f"Passed students are:{studentss[0]}")
     except mysql.connector.Error as err:
                 print(f"Error :{err}")  
     sql="""SELECT COUNT(roll_number) FROM students WHERE marks<50"""
     try:
         cursor.execute(sql)
         studentss=cursor.fetchone()
-        print(f"Failed students are:{studentss}")
+        print(f"Failed students are:{studentss[0]}")
     except mysql.connector.Error as err:
         print(f"Error :{err}")  
     sql="""SELECT name,marks FROM students ORDER BY marks DESC LIMIT 1"""
