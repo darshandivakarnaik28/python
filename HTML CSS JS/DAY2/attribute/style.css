@@ -1,0 +1,50 @@
+form[method="get"]{
+    background: pink;
+    padding:10px;
+}
+input[type^="t"]{
+    color: red;
+}
+[required]{
+    border: 2px solid yello;
+    background-color: yellow;
+}
+input[type="checkbox"]{
+    background: black;
+    border: 2px solid green;;
+}
+label{
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    color:red;
+    font-weight: bold;
+    border: 2px solid black;
+    cursor: pointer;
+
+}
+input[type="submit"]:hover{
+    background: rgb(135, 235, 142);
+}
+input[data-status="submitted"]{
+    background-color: darkblue;
+    color: white;
+}
+input[data-status="success"]:active{
+    background-color: red;
+}
+a[target="_blank"]{
+    background-color: blanchedalmond;
+    text-decoration: none;
+    
+}
+a:visited{
+    color: red;
+}
+a:active{
+    color: green;;
+}
+a:hover{
+    color:rgb(205, 63, 82);
+}

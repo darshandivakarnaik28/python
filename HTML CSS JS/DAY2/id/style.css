@@ -1,0 +1,12 @@
+#highlight{
+    font-weight: bold;
+    font-style: italic;
+    color:red;
+
+}
+#message{
+    border: 2px solid gray;
+    color: green;
+    background: yellow;
+    padding: 10px;
+}

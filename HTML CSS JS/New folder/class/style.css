@@ -1,0 +1,21 @@
+p.font-style{
+    font-weight: bold;
+}
+p.important{
+    color: red;
+    background: yellow;
+}
+
+div.important{
+    color:black;
+    font-style: italic;
+    font-weight: bold;
+}
+.message{
+    border: 2px solid rgb(238, 66, 14);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background: rgb(29, 212, 219);
+
+}

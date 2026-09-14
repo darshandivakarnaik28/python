@@ -1,0 +1,20 @@
+a:visited{
+    color: blue;
+}
+button:hover{
+    background-color: red;
+    cursor: pointer;
+    color:white
+}
+input:focus{
+    border: 3px solid blueviolet;
+    background: yellow;
+    outline: none;
+}
+ul li:first-child{
+    font-weight: bold;
+    color: pink;
+}
+table tr:nth-child(even){
+    background: yellowgreen;
+}

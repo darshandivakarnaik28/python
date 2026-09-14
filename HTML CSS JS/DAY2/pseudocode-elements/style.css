@@ -1,0 +1,27 @@
+p::first-letter{
+    color: red;
+    font-weight: bold;
+}
+h2::before{
+    color: rgb(0, 128, 58);
+    content: "Hello ";
+    font-weight: bold;
+}
+h2::after{
+    color: aqua;
+    content: " Darshan";
+    font-style: italic;
+
+}
+p::first-line{
+    font-style: italic;
+}
+
+input::placeholder{
+    color:rgb(197, 206, 61);
+    font-weight: bold;
+    font-style:italic;
+}
+::selection{
+    background:yellow;
+}
