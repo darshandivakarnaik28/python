@@ -3,36 +3,44 @@
     <head>
         <meta charset="utf-8">
         <title>Digital Calculator</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="calculator.css">
+        <script src="calculator.js" defer></script>
     </head>
     <body>
       <header><h1>Digital Calculator</h1></header>  
-      <main>
-        <form>
-            <input type="display" id="readonly">
-            <br>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            <br>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <br>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button>
-            <br>
-            <button>0</button>
-            <button>.</button>
-            <button>=</button>
-            <button>/</button>
-            <button>C</button>
-            <button>X</button>
-
+      <main >
+        <form >
+            <div class="display">
+                <input type="text" id="display" readonly>
+            </div>
+            
+            <div class="keypad">
+            <button type=button class="number">1</button>
+            <button type=button class="number">2</button>
+            <button type=button class="number">3</button>
+            <button type=button class="operator">+</button>
+            <button type=button>D</button>
+            
+            <button type=button class="number">4</button>
+            <button type=button class="number">5</button>
+            <button type=button class="number">6</button>
+            <button type=button class="operator">-</button>
+            
+            <button type=button class="number">7</button>
+            <button type=button class="number">8</button>
+            <button type=button class="number">9</button>
+            <button type=button class="operator">*</button>
+            <button type=button class="clear">C</button>
+            
+            <button type=button class="number">0</button>
+            <button type=button class="operator">.</button>
+            <button type=button class="operator">%</button>
+            <button type=button class="operator">=</button>
+            </div>
         </form>
+        <section class="history">
+          <h2>History</h2>
+          <ol class="history-list"></ol>
+        </section>
       </main>
     </body>
