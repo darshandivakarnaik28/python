@@ -1,0 +1,29 @@
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(5, 0.1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+
+}
+#display{
+    text-align: center;
+    width: 1000px;
+    height: 100px;
+}
+.number{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid red;
+    padding: 1px 10px 10px 10px;
+    margin: 1px 10px 1px 10px;
+
+}
+.number:hover{
+    background-color: red;
+}
+main{
+    background-color: yellow;
+}
+form{
+    background-color: aqua;
+}
