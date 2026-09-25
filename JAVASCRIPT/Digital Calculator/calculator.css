@@ -1,29 +1,60 @@
+* {
+    box-sizing:border-box;
+}
 .keypad{
     display: grid;
-    grid-template-columns: repeat(5, 0.1fr);
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
 
 }
-#display{
-    text-align: center;
-    width: 1000px;
-    height: 100px;
+#clear{
+    grid-row: span 2;
 }
-.number{
+#delete{
+    grid-row: span 2;
+}
+button{
+    border-radius: 5px;
+    border:2px solid black;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 10px;
-    border: 2px solid red;
-    padding: 1px 10px 10px 10px;
-    margin: 1px 10px 1px 10px;
-
 }
-.number:hover{
-    background-color: red;
+button:hover{
+    background-color: rgb(233, 237, 174);
+    color: rgb(235, 14, 14);
+    transform: scale(1.0);
+    border: 2px solid rgb(193, 223, 19);
+    box-shadow: 10px 10px 20px rgba(24, 9, 235, 0.2);
+}
+button:focus{
+        outline: 3px solid #e4e439f2;
 }
 main{
-    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
 }
-form{
-    background-color: aqua;
+section.calculator{
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 5px 5px 10px rosybrown;
+}
+section.history{
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 5px 5px 10px rosybrown;
+}
+
+.calculator{
+    width: 400px;
+    max-width: 100%;
 }

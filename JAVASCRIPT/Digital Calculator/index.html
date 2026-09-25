@@ -9,6 +9,7 @@
     <body>
       <header><h1>Digital Calculator</h1></header>  
       <main >
+        <section class="calculator">
         <form >
             <div class="display">
                 <input type="text" id="display" readonly>
@@ -19,19 +20,19 @@
             <button type=button class="number">2</button>
             <button type=button class="number">3</button>
             <button type=button class="operator">+</button>
-            <button type=button>D</button>
+            <button type=button id="delete">D</button>
             
             <button type=button class="number">4</button>
             <button type=button class="number">5</button>
             <button type=button class="number">6</button>
             <button type=button class="operator">-</button>
             
-            <button type=button class="number"></button>
+        
             <button type=button class="number">7</button>
             <button type=button class="number">8</button>
             <button type=button class="number">9</button>
             <button type=button class="operator">*</button>
-            <button type=button class="clear">C</button>
+            <button type=button id="clear">C</button>
             
             <button type=button class="number">0</button>
             <button type=button class="operator">.</button>
@@ -39,6 +40,7 @@
             <button type=button class="operator">=</button>
             </div>
         </form>
+        </section>
         <section class="history">
           <h2>History</h2>
           <ol class="history-list"></ol>
