@@ -11,7 +11,7 @@
     grid-row: span 2;
 }
 #delete{
-    grid-row: span 2;
+    grid-row: span 1;
 }
 button{
     border-radius: 5px;
