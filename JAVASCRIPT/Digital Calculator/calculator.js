@@ -26,3 +26,36 @@ else{
 }
 });
 
+let firstnumber=0;
+let operator="";
+const add=document.getElementById("add");
+const minus=document.getElementById("minus");
+const multiply=document.getElementById("multiply");
+const divide = document.getElementById("divide");
+const mod=document.getElementById("mod");
+
+function chooseop(op){
+    firstnumber=Number(display.value);
+    operator=op;
+    display.value="";
+}
+
+add.addEventListener("click",function(){
+    chooseop(add.textContent);
+});
+
+minus.addEventListener("click",function(){
+    chooseop(minus.textContent);
+});
+
+multiply.addEventListener("click",function(){
+    chooseop(multiply.textContent);
+});
+
+divide.addEventListener("click",function(){
+    chooseop(divide.textContent);
+});
+
+mod.addEventListener("click",function(){
+    chooseop(mod.textContent);
+});
