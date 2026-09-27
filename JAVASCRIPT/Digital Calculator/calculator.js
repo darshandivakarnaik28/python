@@ -84,6 +84,10 @@ equal.addEventListener("click",function(){
 
     }
     display.value=result;
+    const historyitem=`${firstnumber} ${operator} ${secondnumber} = ${result}`;
+    history.push(historyitem);
+    localStorage.setItem("history",JSON.stringify(history));
+    renderhistory();
 });
 
 
@@ -121,6 +125,18 @@ document.addEventListener("keydown",function(event){
     else if(event.key=="Backspace"){
         del.click();
     }
+});
 
-
-})
+let history=[];
+if (localStorage.getItem("history")){
+    history=JSON.parse(localStorage.getItem("history"));
+}
+const historylist=document.getElementById("history-list");
+function renderhistory(){
+    historylist.innerHTML="";
+    history.forEach(function(item){
+        const li=document.createElement("li");   
+        li.innerText=item;     
+        historylist.appendChild(li)
+    });
+}
