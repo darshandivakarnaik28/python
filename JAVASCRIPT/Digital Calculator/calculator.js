@@ -59,3 +59,29 @@ divide.addEventListener("click",function(){
 mod.addEventListener("click",function(){
     chooseop(mod.textContent);
 });
+
+const equal=document.getElementById("equal");
+equal.addEventListener("click",function(){
+    let secondnumber=Number(display.value);
+    let result;
+    switch(operator)
+    {
+        case '+':result=firstnumber+secondnumber;
+        break
+        case '-':result=firstnumber-secondnumber;
+        break
+        case '*':result=firstnumber*secondnumber;
+        break
+        case '/':if(secondnumber===0){
+            result="Error division by zero is not allowed"
+        }
+        else{
+            result=firstnumber/secondnumber;
+        }
+        break
+        case '%':result=firstnumber%secondnumber;
+        break
+
+    }
+    display.value=result;
+});
