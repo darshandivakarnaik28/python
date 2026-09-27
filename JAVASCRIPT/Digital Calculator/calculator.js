@@ -85,3 +85,42 @@ equal.addEventListener("click",function(){
     }
     display.value=result;
 });
+
+
+document.addEventListener("keydown",function(event){
+    if(event.key>="0" && event.key<="9"){
+        display.value+=event.key;
+    }
+    else if(event.key=="Delete"){
+        del.click();
+        }
+    else if(event.key=="Enter"){
+        equal.click();                
+    }
+    else if(event.key=="Escape"){
+        clear.click();
+    }
+    else if(event.key=="+"){
+        add.click();
+    }
+    else if(event.key=="-"){
+        minus.click();
+    }
+    else if(event.key=="*"){
+        multiply.click();
+    }
+    else if(event.key=="/"){
+        divide.click();
+    }
+    else if(event.key=="%"){
+        mod.click();
+    }
+    else if(event.key=="."){
+        decimal.click();
+    }
+    else if(event.key=="Backspace"){
+        del.click();
+    }
+
+
+})
