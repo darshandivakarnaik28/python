@@ -64,6 +64,7 @@ const equal=document.getElementById("equal");
 equal.addEventListener("click",function(){
     let secondnumber=Number(display.value);
     let result;
+    if(operator!="" && display.value!="") {
     switch(operator)
     {
         case '+':result=firstnumber+secondnumber;
@@ -88,8 +89,25 @@ equal.addEventListener("click",function(){
     history.push(historyitem);
     localStorage.setItem("history",JSON.stringify(history));
     renderhistory();
+    }
+    else{
+        display.value=""
+    }
 });
 
+let history=[];
+if (localStorage.getItem("history")){
+    history=JSON.parse(localStorage.getItem("history"));
+}
+const historylist=document.getElementById("history-list");
+function renderhistory(){
+    historylist.innerHTML="";
+    history.forEach(function(item){
+        const li=document.createElement("li");   
+        li.innerText=item;     
+        historylist.appendChild(li)
+    });
+}
 
 document.addEventListener("keydown",function(event){
     if(event.key>="0" && event.key<="9"){
@@ -127,16 +145,10 @@ document.addEventListener("keydown",function(event){
     }
 });
 
-let history=[];
-if (localStorage.getItem("history")){
-    history=JSON.parse(localStorage.getItem("history"));
-}
-const historylist=document.getElementById("history-list");
-function renderhistory(){
-    historylist.innerHTML="";
-    history.forEach(function(item){
-        const li=document.createElement("li");   
-        li.innerText=item;     
-        historylist.appendChild(li)
-    });
-}
+
+
+const clean=document.getElementById("reset").addEventListener("click",function(){
+    history=[]
+    localStorage.removeItem("history");
+    renderhistory();
+});

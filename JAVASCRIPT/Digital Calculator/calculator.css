@@ -9,9 +9,7 @@
 #clear{
     grid-row: span 2;
 }
-#delete{
-    grid-row: span 1;
-}
+
 button{
     border-radius: 5px;
     border:2px solid black;
@@ -20,6 +18,11 @@ button{
     font-weight: bold;
     cursor: pointer;
 }
+
+.operator{
+    background-color: rgba(237, 210, 190, 0.715);
+}
+
 button:hover{
     background-color: rgb(233, 237, 174);
     color: rgb(235, 14, 14);
@@ -45,6 +48,7 @@ section.calculator{
     border-radius: 10px;
     max-width: 100%;
     box-shadow: 5px 5px 10px rosybrown;
+    width: 300px;
 }
 section.history{
     border: 2px solid black;
@@ -54,18 +58,14 @@ section.history{
     box-shadow: 5px 5px 10px rosybrown;
 }
 
-.calculator{
-    width: 400px;
-    max-width: 100%;
-}
-
 .display{
     border: 2px solid black;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
-input[type="text"]{
+
+input[type="text"]{ 
     border: 1px solid blue;
     padding: 5px;
     border-radius: 5px;
@@ -81,3 +81,4 @@ h1::first-letter{
     color:red;
     font-size: 1.5em;
     font-style: italic;
+}
