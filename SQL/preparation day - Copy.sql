@@ -1,0 +1,122 @@
+CREATE DATABASE companydb; 
+use companydb; 
+ 
+CREATE TABLE dept ( 
+  deptno INT PRIMARY KEY, 
+  dname VARCHAR(50),  loc VARCHAR(50) 
+); 
+ 
+CREATE TABLE emp ( 
+  empno INT PRIMARY KEY, 
+  ename VARCHAR(50), 
+  job VARCHAR(50), 
+  hiredate DATE, 
+  mgr INT, 
+  sal DECIMAL(10,2), 
+  comm DECIMAL(10,2), 
+  deptno INT, 
+  FOREIGN KEY (deptno) REFERENCES dept(deptno) 
+); 
+ 
+CREATE TABLE customer ( 
+  cid INT PRIMARY KEY, 
+  cname VARCHAR(10), 
+  cno VARCHAR(10) NOT NULL, 
+  address VARCHAR(15), 
+  CHECK (CHAR_LENGTH(cno) = 10) 
+); 
+ 
+CREATE TABLE orders ( 
+    order_id INT PRIMARY KEY, 
+    cid INT, 
+    empno INT, 
+    order_date DATE, 
+    amount DECIMAL(10,2), 
+    status VARCHAR(20), 
+FOREIGN KEY (cid) REFERENCES customer(cid), 
+FOREIGN KEY (empno) REFERENCES emp(empno) 
+); 
+
+
+INSERT INTO dept (deptno, dname, loc) VALUES 
+(10, 'ACCOUNTING', 'NEW YORK'), 
+(20, 'RESEARCH', 'DALLAS'), 
+(30, 'SALES', 'CHICAGO'), 
+(40, 'OPERATIONS', 'BOSTON'), 
+(50, 'HR', 'BANGALORE'), 
+(60, 'FINANCE', 'PUNE'), 
+(70, 'MARKETING', 'DELHI'), 
+(80, 'SUPPORT', 'NOIDA'), 
+(90, 'ADMIN', 'MUMBAI'), 
+(100, 'LEGAL', 'CHENNAI'), 
+(110, 'IT SUPPORT', 'HYDERABAD'), 
+(120, 'R&D', 'BANGALORE'), 
+(130, 'PROCUREMENT', 'KOLKATA'), 
+(140, 'QUALITY', 'PUNE'), 
+(150, 'TRAINING', 'DELHI'); 
+
+INSERT INTO emp ( 
+empno, ename, job, hiredate, mgr, sal, comm, deptno 
+) VALUES 
+(1001, 'RAJ',   'CLERK',    
+'2023-01-10', NULL, 1500.00, NULL, 10), 
+(1002, 'AMIT',  'ANALYST',  '2022-03-15', 1001, 3000.00, NULL, 20),  
+(1003, 'NEHA',  'SALESMAN', '2021-07-20', 1002, 2500.00, 500.00, 
+30), 
+(1004, 'KIRAN', 'MANAGER',  '2020-11-05', 1002, 4000.00, NULL, 20), 
+(1005, 'SARA',  'HR',       
+'2024-02-01', 1004, 2800.00, NULL, 50), 
+(1006, 'RAVI',   'CLERK',    
+'2023-03-12', 1001, 1600.00, NULL, 10), 
+(1007, 'MEENA',  'ANALYST',  '2022-06-25', 1002, 3200.00, NULL, 20), 
+(1008, 'ARJUN',  'SALESMAN', '2021-09-10', 1003, 2600.00, 400.00, 
+30), 
+(1009, 'DIVYA',  'MANAGER',  '2020-01-18', 1004, 4200.00, NULL, 20), 
+(1010, 'KARTHIK','HR',       
+'2024-03-05', 1005, 2900.00, NULL, 50), 
+(1011, 'Pooja',  'CLERK',    
+'2023-07-22', 1006, 1550.00, NULL, 60), 
+(1012, 'Nikhil', 'ANALYST',  '2022-08-30', 1007, 3100.00, NULL, 70), 
+(1013, 'Sneha',  'SALESMAN', '2021-11-14', 1008, 2700.00, 450.00, 
+80), 
+(1014, 'Rahul',  'MANAGER',  '2019-12-01', 1009, 4500.00, NULL, 90), 
+(1015, 'Anjali', 'HR',       
+'2024-04-10', 1010, 3000.00, NULL, 
+100); 
+
+INSERT INTO customer (cid, cname, cno, address) VALUES 
+(1, 'ARUN',  '9876543210', 'DELHI'), 
+(2, 'PRIYA', '9123456780', 'MUMBAI'), 
+(3, 'VIKAS', '9988776655', 'CHENNAI'), 
+(4, 'ANITA', '9090909090', 'KOLKATA'), 
+(5, 'ROHIT', '9012345678', 'HYDERABAD'), 
+(6,  'KIRAN',   '9123456701', 'PUNE'), 
+(7,  'SNEHA',   '9234567802', 'DELHI'), 
+(8,  'RAHUL',   '9345678903', 'NOIDA'), 
+(9,  'MEENA',   '9456789014', 'MUMBAI'), 
+(10, 'ARJUN',   '9567890125', 'CHENNAI'), 
+(11, 'DIVYA',   '9678901236', 'HYDERABAD'), 
+(12, 'VIKRAM',  '9789012347', 'KOLKATA'), 
+(13, 'POOJA',   '9890123458', 'BANGALORE'), 
+(14, 'NIKHIL',  '9901234569', 'PUNE'), 
+(15, 'ANJALI',  '9012345670', 'DELHI'); 
+
+INSERT INTO orders 
+(order_id, cid, empno, order_date, amount, status) 
+VALUES 
+(101, 1, 1003, '2025-01-10', 12000, 'DELIVERED'), 
+(102, 2, 1008, '2025-01-11', 18000, 'PENDING'), 
+(103, 3, 1003, '2025-01-15', 15000, 'DELIVERED'), 
+(104, 4, 1013, '2025-02-01', 22000, 'CANCELLED'), 
+(105, 5, 1008, '2025-02-10', 25000, 'DELIVERED'), 
+(106, 6, 1003, '2025-02-15', 9000,  'PENDING'), 
+(107, 7, 1013, '2025-03-01', 30000, 'DELIVERED'), 
+(108, 8, 1008, '2025-03-12', 17000, 'DELIVERED'), 
+(109, 9, 1003, '2025-03-15', 20000, 'PENDING'), 
+(110, 10, 1013, '2025-04-01', 27000, 'DELIVERED'), 
+(111, 11, 1008, '2025-04-05', 11000, 'CANCELLED'), 
+(112, 12, 1003, '2025-04-10', 35000, 'DELIVERED'), 
+(113, 13, 1013, '2025-04-12', 40000, 'PENDING'), 
+(114, 14, 1008, '2025-04-18', 15000, 'DELIVERED'), 
+(115, 15, 1003, '2025-04-25', 28000, 'DELIVERED'); 
+
