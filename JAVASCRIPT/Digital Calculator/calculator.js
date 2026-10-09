@@ -17,7 +17,7 @@ del.addEventListener("click",function(){
 });
 
 const decimal=document.getElementById("decimal");
-decimal.addEventListener("click",function(){
+decimal.addEventListener("click",()=>{
 if(display.value.includes(".")){
     
 }
