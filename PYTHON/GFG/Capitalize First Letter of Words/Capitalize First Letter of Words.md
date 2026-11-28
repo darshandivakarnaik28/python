@@ -1,0 +1,11 @@
+Given a string s, convert the first letter of each word in the string to uppercase. 
+
+Examples:
+
+Input: s = "gEEKs"
+Output: "GEEKs"
+Input: s = "i love programming"
+Output: "I Love Programming"
+Constraints:
+1 <= s.length() <= 104
+Consists of lowercase alphabets and spaces to separate words
